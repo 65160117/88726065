@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>JavaScript</title>
+</head>
+<body>
+    <script>
+        let arr = ["Hello", "JavaScript", "Nice to meet you"];
+        let i = 0;
+
+        function next() {
+            i = (i + 1) % arr.length;
+            document.getElementById("text").innerHTML = arr[i];
+        }
+    </script>
+
+    <h2>
+        <div id="text" onclick="next()">Click me!</div>
+    </h2>
+</body>
+</html>
