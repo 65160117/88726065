@@ -1,0 +1,26 @@
+[
+    {
+        "id": 1,
+        "name": "Eather",
+        "author": "Leg",
+        "author2": "Arm",
+        "author3": "Eye",
+        "price": "1000"
+    },
+    {
+        "id": 2,
+        "name": "Oled",
+        "author": "OO",
+        "author2": "AA",
+        "author3": "SS",
+        "price": "1002"
+    },
+    {
+        "id": 3,
+        "name": "IOIR",
+        "author": "NICETSU",
+        "author2": "zec",
+        "author3": "JJJ",
+        "price": "2000"
+    }
+]
