@@ -18,30 +18,26 @@ import TheWelcome from './components/TheWelcome.vue'
 
   <div id="app">
     <h1>TODO App</h1>
-    <from @submit.prevent="addTodo">
+    <form @submit.prevent="addTodo">
       <input v-model="newTodo" placeholder="Enter new todo"/>
       <button type="submit">Add</button>
-    </from>
+      <button @click="filter = 'all'">all</button>
+    <button @click="filter = 'active'">active</button>
+    <button @click="filter = 'done'">done</button>
+    </form>
     <ul>
-      <li v-for="todo in todos" :key="todo.id">
-        <span :class="{done: todo.done}" @click="toggleTodo(index)">
+      <li v-for="(todo, index) in todos" :key="todo.id">
+        <span :class="{ done: todo.done }" @click="toggleTodo(index)">
           {{ todo.text }}
         </span>
         <button @click="removeTodo(index)">X</button>
       </li>
     </ul>
   </div>
-
-  <div>
-    <button @click="filter = 'all'">all</button>
-    <button @click="filter = 'active'">active</button>
-    <button @click="filter = 'done'">done</button>
-  </div>
 </template>
 
 <script>
-import {ref,computed} from "vue";
-
+import {ref, computed} from 'vue';
 export default {
   name: 'App',
   setup() {
@@ -49,10 +45,10 @@ export default {
     const todos = ref([]);
 
     const addTodo = () => {
-      if (newTod.value) {
+      if (newTodo.value) {
         todos.value.push({
           id: Date.now(),
-          test: newTodo.value,
+          text: newTodo.value,
           done: false,
         });
         newTodo.value = "";
